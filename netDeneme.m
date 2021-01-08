@@ -1,5 +1,9 @@
-clear all
-%test of trained data
+clear all;
+clc;
+%burada kullanıcıdan input alıyoruz ve öncesinde bazı belirli stringler
+%belirlemiştik bu stringler sayesinde hangi egitilmiş agi cagiracagiz onu
+%bulacagiz ve hazırladığımız if bloklarına sokup kimin el yazısı onu
+%bulmaya çalışacağız
 a=input("hangi kategoriden resim deneyeceksiniz?:  ","s");
 string1='Elma';
 string2='Armut';
@@ -7,7 +11,7 @@ string3='Murat Ceylan';
 string4='Sayisal Goruntu';
 
 %fotografın lokasyonu
-resimPath='C:\Users\hmk44\OneDrive\Documents\MATLAB\git_project\Farkli\Armut.jpg';
+resimPath='C:\Users\hmk44\OneDrive\Documents\MATLAB\git_project\SayisalGoruntu\SayisalGoruntu1_t.jpeg';
 
  %resim yükle
 
@@ -28,15 +32,17 @@ foto=imresize(foto,[500 500]);
 foto=double(foto);
 imshow(foto)
 foto=foto+rand(500);
-
+%burada if state lerimiz başlıyor eger elma ise bu state e girecek 
 if strcmp(string1,a)
+    %burada ise hangi egiytilmis olan net yuklenecek ona karar veriyoruz
     load elma
-    
+%burada eğittimiz ag ile belirledigimiz fotografin simulasyonunu yaptırıyoruz      
 X=sim(net,deneme1);
+%burada X matisindeki max degeri ve o degerein index ini buluyoruz
 [max_num,max_idx] = max(X());
 if(max_idx == 1 || max_idx == 4 || max_idx == 7)
-    if max_num>=0.9
-        
+    if max_num>=0.89
+        %burada fotonun ustune text i bastırıyoruz
         J = insertText(foto, [0 400 ], 'Bu Elif Beyza Sertbakan nin el yazisi','FontSize',26);
         imshow(J);
     else
@@ -46,7 +52,7 @@ if(max_idx == 1 || max_idx == 4 || max_idx == 7)
     end
     
 elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400 ], 'Bu Tahir Saz in el yazisi','FontSize',26);
         imshow(J);
     else
@@ -55,7 +61,7 @@ elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
     end
     
 elseif(max_idx == 3 || max_idx == 6 || max_idx == 9)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400], 'Bu Ufuk Salgin in  yazisi','FontSize',26);
         imshow(J);
     else
@@ -65,12 +71,12 @@ elseif(max_idx == 3 || max_idx == 6 || max_idx == 9)
     
 end
 elseif strcmp(string2,a)
-     load ArmutSon
+     load ArmutDeneme
      
 X=sim(net,deneme1);
 [max_num,max_idx] = max(X());
 if(max_idx == 1 || max_idx == 4 || max_idx == 7)
-    if max_num>=0.9
+    if max_num>=0.89
         
         J = insertText(foto, [0 400], 'Bu Elif Beyza Sertbakan nin el yazisi','FontSize',26);
         imshow(J);
@@ -81,7 +87,7 @@ if(max_idx == 1 || max_idx == 4 || max_idx == 7)
     end
     
 elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400 ], 'Bu Tahir Saz in el yazisi','FontSize',26);
         imshow(J);
     else
@@ -90,7 +96,7 @@ elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
     end
     
 elseif(max_idx == 3 || max_idx == 6 || max_idx == 9)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400], 'Bu Ufuk Salgin in  yazisi','FontSize',26);
         imshow(J);
     else
@@ -105,7 +111,7 @@ elseif strcmp(string3,a)
 X=sim(net,deneme1);
 [max_num,max_idx] = max(X());
 if(max_idx == 1 || max_idx == 4 || max_idx == 7)
-    if max_num>=0.9
+    if max_num>=0.89
         
         J = insertText(foto, [0 400], 'Bu Elif Beyza Sertbakan nin el yazisi','FontSize',26);
         imshow(J);
@@ -116,7 +122,7 @@ if(max_idx == 1 || max_idx == 4 || max_idx == 7)
     end
     
 elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400], 'Bu Tahir Saz in el yazisi','FontSize',26);
         imshow(J);
     else
@@ -125,7 +131,7 @@ elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
     end
     
 elseif(max_idx == 3 || max_idx == 6 || max_idx == 9)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400], 'Bu Ufuk Salgin in  yazisi','FontSize',26);
         imshow(J);
     else
@@ -140,7 +146,7 @@ elseif strcmp(string4,a)
  X=sim(net,deneme1);
 [max_num,max_idx] = max(X());
 if(max_idx == 1 || max_idx == 4 || max_idx == 7)
-    if max_num>=0.9
+    if max_num>=0.89
         
         J = insertText(foto, [0 400], 'Bu Elif Beyza Sertbakan nin el yazisi','FontSize',26);
         imshow(J);
@@ -151,7 +157,7 @@ if(max_idx == 1 || max_idx == 4 || max_idx == 7)
     end
     
 elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400], 'Bu Tahir Saz in el yazisi','FontSize',26);
         imshow(J);
     else
@@ -160,7 +166,7 @@ elseif(max_idx == 2 || max_idx == 5 || max_idx == 8)
     end
     
 elseif(max_idx == 3 || max_idx == 6 || max_idx == 9)
-    if max_num>=0.9
+    if max_num>=0.89
         J = insertText(foto, [0 400], 'Bu Ufuk Salgin in  yazisi','FontSize',26);
         imshow(J);
     else
