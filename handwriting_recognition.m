@@ -1,5 +1,7 @@
 clear all;
 clc;
+
+%burada klasörün içindeki jpeg uzantılı dosyaları alıyoruz 
 dosyayeri='C:\Users\hmk44\OneDrive\Documents\MATLAB\git_project\ArmutThick\';
 dosyaturu='.jpeg';
 
@@ -27,7 +29,7 @@ giris=A;
 [S2,Q]=size(target);
 S1=10;
 
-%burada yapay sinir ağlarımızı logaritmik simoid şekilde eğğitiyoruz
+%burada yapay sinir ağlarımızı logaritmik sigmoid şekilde egitiyoruz
 %yukarıda aldığımız S1 ve S2 değerlerini burada yerine yazarsak yaklaşık
 %300000 tane inputumuz ve 9 tane outputumuz olacak
 net = newff(minmax(giris),[S1 S2],{'logsig' 'logsig'},'trainscg');

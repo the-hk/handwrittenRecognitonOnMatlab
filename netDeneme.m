@@ -11,9 +11,9 @@ string3='Murat Ceylan';
 string4='Sayisal Goruntu';
 
 %fotografın lokasyonu
-resimPath='C:\Users\hmk44\OneDrive\Documents\MATLAB\git_project\SayisalGoruntu\SayisalGoruntu1_t.jpeg';
+resimPath='C:\Users\hmk44\OneDrive\Documents\MATLAB\git_project\Elma\Elma2_u.jpeg';
 
- %resim yükle
+%resim yükle
 
 deneme1=imread(resimPath);
 deneme1=imbinarize(deneme1);
@@ -34,7 +34,7 @@ imshow(foto)
 foto=foto+rand(500);
 %burada if state lerimiz başlıyor eger elma ise bu state e girecek 
 if strcmp(string1,a)
-    %burada ise hangi egiytilmis olan net yuklenecek ona karar veriyoruz
+    %burada ise hangi egitilmis olan net yuklenecek ona karar veriyoruz
     load elma
 %burada eğittimiz ag ile belirledigimiz fotografin simulasyonunu yaptırıyoruz      
 X=sim(net,deneme1);
